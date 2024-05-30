@@ -1,0 +1,53 @@
+/*
+// Enter your code below this line
+
+// Code example
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const NFTs = []
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (Carname, model, speedrange) 
+{
+const NFT = {
+    "Carname": Carname,
+    "model": model,
+    "speedrange" : speedrange,
+    
+}
+NFTs.push(NFT);
+console.log("minted:"+ Carname);
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    for(let i=0; i<NFTs.length;i++) {   
+    console.log("\nCarname:\t\t" + NFTs[i].Carname);
+    console.log("model:\t\t" + NFTs[i].model);
+    console.log("speedrange:\t\t" + NFTs[i].speedrange);
+  
+    }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+console.log("\nTotal supply: " + NFTs.length);
+}
+
+// call your functions below this line
+mintNFT("Range Rover", "Range Rover Sport", "290 Kmph" );
+mintNFT("Nano", "Nano CNG XM624 cc", "67 Kmph" );
+mintNFT("Thar", "Sport Utiliy", "155 Kmph" );
+mintNFT("Mercedes", "Mercedes SUV", "210 Kmph" );
+listNFTs();
+getTotalSupply();
